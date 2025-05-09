@@ -1,10 +1,10 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Share2, Calendar, MapPin, Wallet } from "lucide-react"
-import { SimplePassport } from "@/components/simple-passport"
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Share2, Calendar, MapPin, Wallet } from 'lucide-react';
+import { SimplePassport } from '@/components/simple-passport';
 
 export default function PassportPage() {
   return (
@@ -20,20 +20,28 @@ export default function PassportPage() {
               height={40}
               className="h-10 w-10 object-contain"
             />
-            <span className="font-medievalsharp text-2xl font-bold text-amber-900">Solterra</span>
+            <span className="font-medievalSharp text-2xl font-bold text-amber-900">
+              Solterra
+            </span>
           </Link>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/quests" className="font-medievalsharp text-amber-900 hover:text-amber-700">
+          <nav className="font-medievalSharp hidden items-center space-x-6 md:flex">
+            <Link
+              href="/quests"
+              className="text-amber-900 hover:text-amber-700"
+            >
               Quests
             </Link>
             <Link
               href="/passport"
-              className="font-medievalsharp text-amber-900 hover:text-amber-700 border-b-2 border-amber-700"
+              className="border-b-2 border-amber-700 text-amber-900 hover:text-amber-700"
             >
               Passport
             </Link>
           </nav>
-          <Button variant="outline" className="font-medievalsharp border-amber-700 text-amber-700 hover:bg-amber-100">
+          <Button
+            variant="outline"
+            className="border-amber-700 text-amber-700 hover:bg-amber-100"
+          >
             <Wallet className="mr-2 h-4 w-4" /> 0x1a2...3b4c
           </Button>
         </div>
@@ -41,21 +49,28 @@ export default function PassportPage() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-6">
+        <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalsharp text-3xl font-bold text-amber-900">Digital Passport</h1>
-            <p className="text-amber-800 mt-2">Your collection of magical stamps and badges from your adventures</p>
+            <h1 className="font-medievalSharp text-3xl font-bold text-amber-900">
+              Digital Passport
+            </h1>
+            <p className="mt-2 text-amber-800">
+              Your collection of magical stamps and badges from your adventures
+            </p>
           </div>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Button variant="outline" className="border-amber-200 text-amber-700">
+          <div className="mt-4 flex gap-4 md:mt-0">
+            <Button
+              variant="outline"
+              className="border-amber-200 text-amber-700"
+            >
               <Share2 className="mr-2 h-4 w-4" /> Share Passport
             </Button>
           </div>
         </div>
 
-        <div className="bg-amber-100/30 border border-amber-200 rounded-lg p-6 mb-8">
-          <div className="grid md:grid-cols-[200px_1fr] gap-6 items-center">
-            <div className="bg-amber-100 border-2 border-amber-200 rounded-full overflow-hidden p-2 mx-auto">
+        <div className="mb-8 rounded-lg border border-amber-200 bg-amber-100/30 p-6">
+          <div className="grid items-center gap-6 md:grid-cols-[200px_1fr]">
+            <div className="mx-auto overflow-hidden rounded-full border-2 border-amber-200 bg-amber-100 p-2">
               <Image
                 src="/baddy-icon.png?height=180&width=180"
                 alt="Avatar"
@@ -65,26 +80,30 @@ export default function PassportPage() {
               />
             </div>
             <div>
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <h2 className="font-medievalsharp text-2xl font-bold text-amber-900">Adventurer Dev Badraj</h2>
-                <Badge className="bg-amber-700 text-amber-50 font-medievalsharp">Explorer</Badge>
+              <div className="mb-4 flex flex-wrap items-center gap-3">
+                <h2 className="font-medievalSharp text-2xl font-bold text-amber-900">
+                  Adventurer Dev Badraj
+                </h2>
+                <Badge className="font-medievalSharp bg-amber-700 text-amber-50">
+                  Explorer
+                </Badge>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
-                  <div className="text-amber-900 font-bold text-xl">12</div>
-                  <div className="text-amber-700 text-sm">Locations</div>
+              <div className="mb-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
+                  <div className="text-xl font-bold text-amber-900">12</div>
+                  <div className="text-sm text-amber-700">Locations</div>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
-                  <div className="text-amber-900 font-bold text-xl">5</div>
-                  <div className="text-amber-700 text-sm">NFTs</div>
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
+                  <div className="text-xl font-bold text-amber-900">5</div>
+                  <div className="text-sm text-amber-700">NFTs</div>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
-                  <div className="text-amber-900 font-bold text-xl">150</div>
-                  <div className="text-amber-700 text-sm">SOL Earned</div>
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
+                  <div className="text-xl font-bold text-amber-900">150</div>
+                  <div className="text-sm text-amber-700">SOL Earned</div>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
-                  <div className="text-amber-900 font-bold text-xl">3</div>
-                  <div className="text-amber-700 text-sm">Quests Active</div>
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
+                  <div className="text-xl font-bold text-amber-900">3</div>
+                  <div className="text-sm text-amber-700">Quests Active</div>
                 </div>
               </div>
             </div>
@@ -92,16 +111,16 @@ export default function PassportPage() {
         </div>
 
         <Tabs defaultValue="stamps" className="w-full">
-          <TabsList className="bg-amber-100 border border-amber-200 mb-6">
+          <TabsList className="mb-6 border border-amber-200 bg-amber-100">
             <TabsTrigger
               value="stamps"
-              className="font-medievalsharp data-[state=active]:bg-amber-700 data-[state=active]:text-amber-50"
+              className="font-medievalSharp data-[state=active]:bg-amber-700 data-[state=active]:text-amber-50"
             >
               Stamps
             </TabsTrigger>
             <TabsTrigger
               value="nfts"
-              className="font-medievalsharp data-[state=active]:bg-amber-700 data-[state=active]:text-amber-50"
+              className="font-medievalSharp data-[state=active]:bg-amber-700 data-[state=active]:text-amber-50"
             >
               NFT Collection
             </TabsTrigger>
@@ -116,7 +135,7 @@ export default function PassportPage() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="bg-amber-50 border border-amber-200 rounded-lg overflow-hidden hover:shadow-lg transition-all"
+                  className="overflow-hidden rounded-lg border border-amber-200 bg-amber-50 transition-all hover:shadow-lg"
                 >
                   <div className="relative">
                     <Image
@@ -124,27 +143,39 @@ export default function PassportPage() {
                       alt={`NFT ${i}`}
                       width={300}
                       height={300}
-                      className="w-full h-64 object-cover"
+                      className="h-64 w-full object-cover"
                     />
                     <div className="absolute top-2 right-2">
-                      <Badge className="bg-amber-700 text-amber-50 font-medievalsharp">
-                        {i % 3 === 0 ? "Legendary" : i % 2 === 0 ? "Rare" : "Common"}
+                      <Badge className="font-medievalSharp bg-amber-700 text-amber-50">
+                        {i % 3 === 0
+                          ? 'Legendary'
+                          : i % 2 === 0
+                            ? 'Rare'
+                            : 'Common'}
                       </Badge>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-medievalsharp text-lg font-bold text-amber-900 mb-1">Enchanted Relic #{i}</h3>
-                    <div className="flex items-center text-amber-700 text-sm mb-3">
-                      <Calendar className="h-4 w-4 mr-1" /> Acquired: May {i + 10}, 2025
+                    <h3 className="font-medievalSharp mb-1 text-lg font-bold text-amber-900">
+                      Enchanted Relic #{i}
+                    </h3>
+                    <div className="mb-3 flex items-center text-sm text-amber-700">
+                      <Calendar className="mr-1 h-4 w-4" /> Acquired: May{' '}
+                      {i + 10}, 2025
                     </div>
-                    <p className="text-amber-800 text-sm mb-3">
-                      A mystical artifact discovered during your journey through the ancient forest.
+                    <p className="mb-3 text-sm text-amber-800">
+                      A mystical artifact discovered during your journey through
+                      the ancient forest.
                     </p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center text-amber-700 text-sm">
-                        <MapPin className="h-4 w-4 mr-1" /> Mystic Garden
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-amber-700">
+                        <MapPin className="mr-1 h-4 w-4" /> Mystic Garden
                       </div>
-                      <Button size="sm" variant="outline" className="border-amber-700 text-amber-700">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-amber-700 text-amber-700"
+                      >
                         View Details
                       </Button>
                     </div>
@@ -156,5 +187,5 @@ export default function PassportPage() {
         </Tabs>
       </main>
     </div>
-  )
+  );
 }
