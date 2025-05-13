@@ -70,6 +70,7 @@ export function LocationCard({
 
   return (
     <div
+      key={id}
       ref={cardRef}
       className="tilt-card relative aspect-[9/16] w-full max-w-[320px] cursor-pointer overflow-hidden rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-xl"
       style={{
@@ -88,7 +89,7 @@ export function LocationCard({
 
       {/* Inner border */}
       <div className="tilt-card-content pointer-events-none absolute inset-[6px] rounded-lg border border-amber-200/30" />
-
+      {reward}
       {/* Elevation badge */}
       {elevation && (
         <div className="tilt-card-badge absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-amber-400/90 px-3 py-1.5 text-xs font-bold text-amber-900 shadow-md">

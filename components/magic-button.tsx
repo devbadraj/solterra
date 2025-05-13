@@ -33,7 +33,7 @@ export function MagicButton({
   };
 
   const baseClasses = cn(
-    'relative overflow-hidden font-medievalSharp transition-all duration-300',
+    'relative overflow-hidden transition-all duration-300',
     variant === 'default'
       ? 'bg-amber-700 hover:bg-amber-600 text-amber-50'
       : '',
