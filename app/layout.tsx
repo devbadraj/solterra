@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Funnel_Sans, MedievalSharp } from 'next/font/google';
+import { Funnel_Display, MedievalSharp } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
-const funnelSans = Funnel_Sans({
-  variable: '--font-funnel-sans',
+const funnelDisplay = Funnel_Display({
+  variable: '--font-funnel-display',
   weight: 'variable',
   subsets: ['latin'],
 });
@@ -27,16 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${funnelSans.className} ${medievalSharp.variable} bg-[#f4d03f]/10`}
-      >
+      <body className={`${funnelDisplay.className} ${medievalSharp.variable}`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="texture pointer-events-none absolute inset-0 z-[-1]" />
           {children}
         </ThemeProvider>
       </body>

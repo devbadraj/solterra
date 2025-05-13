@@ -8,7 +8,11 @@ import { SimplePassport } from '@/components/simple-passport';
 
 export default function PassportPage() {
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="relative bg-amber-900/50">
+      <span
+        className="absolute inset-0 -z-10 opacity-30"
+        style={{ backgroundImage: `url(/grain.webp)` }}
+      />
       {/* Header */}
       <header className="border-b border-amber-200">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -20,20 +24,20 @@ export default function PassportPage() {
               height={40}
               className="h-10 w-10 object-contain"
             />
-            <span className="font-medievalSharp text-2xl font-bold text-amber-900">
+            <span className="font-medievalSharp text-2xl font-bold text-amber-500">
               Solterra
             </span>
           </Link>
-          <nav className="font-medievalSharp hidden items-center space-x-6 md:flex">
+          <nav className="hidden items-center space-x-6 md:flex">
             <Link
               href="/quests"
-              className="text-amber-900 hover:text-amber-700"
+              className="text-amber-600 transition duration-300 hover:text-amber-700"
             >
               Quests
             </Link>
             <Link
               href="/passport"
-              className="border-b-2 border-amber-700 text-amber-900 hover:text-amber-700"
+              className="border-amber-600 text-amber-600 underline decoration-dashed underline-offset-4 transition duration-300 hover:text-amber-700"
             >
               Passport
             </Link>
@@ -46,15 +50,14 @@ export default function PassportPage() {
           </Button>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-amber-900">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100">
               Digital Passport
             </h1>
-            <p className="mt-2 text-amber-800">
+            <p className="mt-2 text-gray-300">
               Your collection of magical stamps and badges from your adventures
             </p>
           </div>
@@ -89,21 +92,21 @@ export default function PassportPage() {
                 </Badge>
               </div>
               <div className="mb-4 grid grid-cols-2 gap-4 md:grid-cols-4">
-                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
-                  <div className="text-xl font-bold text-amber-900">12</div>
-                  <div className="text-sm text-amber-700">Locations</div>
+                <div className="flex flex-col rounded-lg border border-dashed border-amber-200 bg-amber-800 p-3 text-center">
+                  <span className="text-xl font-bold text-amber-400">12</span>
+                  <span className="text-sm text-amber-500">Locations</span>
                 </div>
-                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
-                  <div className="text-xl font-bold text-amber-900">5</div>
-                  <div className="text-sm text-amber-700">NFTs</div>
+                <div className="flex flex-col rounded-lg border border-dashed border-amber-200 bg-amber-800 p-3 text-center">
+                  <span className="text-xl font-bold text-amber-400">5</span>
+                  <span className="text-sm text-amber-500">NFTs</span>
                 </div>
-                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
-                  <div className="text-xl font-bold text-amber-900">150</div>
-                  <div className="text-sm text-amber-700">SOL Earned</div>
+                <div className="flex flex-col rounded-lg border border-dashed border-amber-200 bg-amber-800 p-3 text-center">
+                  <span className="text-xl font-bold text-amber-400">150</span>
+                  <span className="text-sm text-amber-500">SOL Earned</span>
                 </div>
-                <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-center">
-                  <div className="text-xl font-bold text-amber-900">3</div>
-                  <div className="text-sm text-amber-700">Quests Active</div>
+                <div className="flex flex-col rounded-lg border border-dashed border-amber-200 bg-amber-800 p-3 text-center">
+                  <span className="text-xl font-bold text-amber-400">3</span>
+                  <span className="text-sm text-amber-500">Quests Active</span>
                 </div>
               </div>
             </div>
@@ -135,7 +138,7 @@ export default function PassportPage() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="overflow-hidden rounded-lg border border-amber-200 bg-amber-50 transition-all hover:shadow-lg"
+                  className="overflow-hidden rounded-lg border border-amber-200 bg-amber-300/50 transition-all hover:shadow-lg"
                 >
                   <div className="relative">
                     <Image

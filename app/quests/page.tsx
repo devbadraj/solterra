@@ -11,12 +11,15 @@ import { FloatingElements } from '@/components/floating-elements';
 
 export default function QuestsPage() {
   return (
-    <div className="min-h-screen">
+    <div className="relative bg-amber-900/50">
+      <span
+        className="absolute inset-0 -z-10 opacity-30"
+        style={{ backgroundImage: `url(/grain.webp)` }}
+      />
       <FloatingElements />
-
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-amber-200/50 bg-amber-50/80 backdrop-blur-sm">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <header className="sticky top-0 z-50 border-b bg-amber-950/90 backdrop-blur-sm">
+        <div className="container flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/solterra-logo.png"
@@ -25,20 +28,20 @@ export default function QuestsPage() {
               height={40}
               className="h-10 w-10 object-contain"
             />
-            <span className="font-medievalSharp text-2xl font-bold text-amber-900">
+            <span className="font-medievalSharp text-2xl font-bold text-amber-500">
               Solterra
             </span>
           </Link>
-          <nav className="hidden items-center space-x-6 md:flex">
+          <nav className="hidden items-center space-x-6 font-medium md:flex">
             <Link
               href="/quests"
-              className="font-medievalSharp border-b-2 border-amber-700 text-amber-900 hover:text-amber-700"
+              className="text-amber-600 underline underline-offset-4 decoration-dashed border-amber-600 transition duration-300 hover:text-amber-700"
             >
               Quests
             </Link>
             <Link
               href="/passport"
-              className="font-medievalSharp text-amber-900 hover:text-amber-700"
+              className="text-amber-600 transition duration-300 hover:text-amber-700"
             >
               Passport
             </Link>
@@ -47,19 +50,18 @@ export default function QuestsPage() {
             variant="outline"
             className="font-medievalSharp border-amber-700 text-amber-700 hover:bg-amber-100"
           >
-            <Wallet className="mr-2 h-4 w-4" /> 0x1a2...3b4c
+            <Wallet className="mr-2 size-5" /> 0x1a2...3b4c
           </Button>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-amber-900">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100">
               Quest Map
             </h1>
-            <p className="mt-2 text-amber-800">
+            <p className="mt-2 text-gray-300">
               Discover magical locations and earn rewards on your journey
             </p>
           </div>

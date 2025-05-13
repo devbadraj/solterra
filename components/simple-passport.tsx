@@ -17,19 +17,19 @@ export function SimplePassport() {
   ];
 
   return (
-    <div className="rounded-lg border-2 border-amber-300 bg-amber-50 p-6 shadow-lg">
+    <div className="rounded-lg border-2 border-amber-300 bg-amber-800 p-6 shadow-lg">
       <div className="mb-6 text-center">
-        <h3 className="font-medievalSharp text-2xl font-bold text-amber-900">
+        <h3 className="font-medievalSharp text-2xl font-bold text-gray-100">
           Your Passport
         </h3>
-        <p className="text-amber-700">Your magical journey continues</p>
+        <p className="text-gray-300">Your magical journey continues</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         {stamps.map((stamp) => (
           <div
             key={stamp.id}
-            className="relative rounded-lg border-2 border-amber-200 bg-amber-100/50 p-4"
+            className="relative rounded-lg border-2 border-amber-200 bg-amber-300/50 p-4"
           >
             <div className="absolute -top-3 -right-3 rotate-12">
               <div className="relative">
@@ -38,7 +38,7 @@ export function SimplePassport() {
                   alt={stamp.name}
                   width={80}
                   height={80}
-                  className="h-20 w-20 object-contain"
+                  className="size-20 object-contain"
                 />
               </div>
             </div>
@@ -57,16 +57,16 @@ export function SimplePassport() {
               </Badge>
             </div>
 
-            <h4 className="font-medievalSharp mb-2 text-lg font-bold text-amber-900">
+            <h4 className="font-medievalSharp mb-2 text-xl font-bold text-amber-100">
               {stamp.name}
             </h4>
 
-            <div className="mb-2 flex items-center text-sm text-amber-700">
-              <Calendar className="mr-1 h-4 w-4" /> {stamp.date}
+            <div className="mb-2 flex items-center text-sm text-amber-50">
+              <Calendar className="mr-1 size-5" /> {stamp.date}
             </div>
 
-            <div className="flex items-center text-sm text-amber-700">
-              <MapPin className="mr-1 h-4 w-4" /> Location visited
+            <div className="flex items-center text-sm text-amber-50">
+              <MapPin className="mr-1 size-5" /> Location visited
             </div>
 
             <div className="mt-4 text-center">
