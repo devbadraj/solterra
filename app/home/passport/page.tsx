@@ -1,9 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Share2, Calendar, MapPin, Wallet } from 'lucide-react';
+import { Share2, Calendar, MapPin } from 'lucide-react';
 import { SimplePassport } from '@/components/simple-passport';
 
 export default function PassportPage() {
@@ -13,44 +12,6 @@ export default function PassportPage() {
         className="absolute inset-0 -z-10 opacity-30"
         style={{ backgroundImage: `url(/grain.webp)` }}
       />
-      {/* Header */}
-      <header className="border-b border-amber-200">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/solterra-logo.png"
-              alt="Solterra"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
-            />
-            <span className="font-medievalSharp text-2xl font-bold text-amber-500">
-              Solterra
-            </span>
-          </Link>
-          <nav className="hidden items-center space-x-6 md:flex">
-            <Link
-              href="/quests"
-              className="text-amber-600 transition duration-300 hover:text-amber-700"
-            >
-              Quests
-            </Link>
-            <Link
-              href="/passport"
-              className="border-amber-600 text-amber-600 underline decoration-dashed underline-offset-4 transition duration-300 hover:text-amber-700"
-            >
-              Passport
-            </Link>
-          </nav>
-          <Button
-            variant="outline"
-            className="border-amber-700 text-amber-700 hover:bg-amber-100"
-          >
-            <Wallet className="mr-2 h-4 w-4" /> 0x1a2...3b4c
-          </Button>
-        </div>
-      </header>
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>

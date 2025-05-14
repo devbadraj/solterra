@@ -1,8 +1,12 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { IconCaretRightFilled, IconEPassport } from '@tabler/icons-react';
 import Image from 'next/image';
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <section
       id="about"
@@ -18,7 +22,7 @@ export default function Hero() {
               Explore real-world places. Earn magical digital rewards.
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
-              <Button>
+              <Button onClick={() => router.push('/home/quests')}>
                 <span>Start Quest</span>&nbsp;
                 <IconCaretRightFilled className="ml-2 size-5" />
               </Button>

@@ -5,8 +5,9 @@ import ScrambleHover from '@/components/ui/scramble-hover';
 import { Link as Scroll } from 'react-scroll/modules';
 import { Fragment } from 'react';
 import { navItems } from '@/constants/header';
+import { cn } from '@/lib/utils';
 
-export default function NavBar() {
+export default function NavBar({ className }: { className?: string }) {
   return (
     <Fragment>
       {navItems.map(({ name, href }) => (
@@ -16,7 +17,10 @@ export default function NavBar() {
           spy={true}
           smooth={true}
           duration={1000}
-          className="cursor-pointer opacity-60 transition-opacity duration-500 hover:opacity-90"
+          className={cn(
+            'cursor-pointer opacity-60 transition-opacity duration-500 hover:opacity-90',
+            className,
+          )}
         >
           <motion.div
             layout

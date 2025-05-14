@@ -4,7 +4,6 @@ import { IconArrowRight, IconWallet } from '@tabler/icons-react';
 export default function CallToAction() {
   return (
     <section className="relative container overflow-hidden py-16 text-amber-50">
-      <div className="absolute inset-0 bg-[url('/parchment-texture.png')] opacity-5"></div>
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h2 className="font-medievalSharp mb-6 text-3xl font-bold">
           Ready to Begin Your Adventure?
