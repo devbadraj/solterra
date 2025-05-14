@@ -7,9 +7,9 @@ import { SimplePassport } from '@/components/simple-passport';
 
 export default function PassportPage() {
   return (
-    <div className="relative bg-amber-900/50">
+    <div className="relative bg-red-900/40">
       <span
-        className="absolute inset-0 -z-10 opacity-30"
+        className="absolute inset-0 -z-10 opacity-30 "
         style={{ backgroundImage: `url(/grain.webp)` }}
       />
       <main className="container mx-auto px-4 py-8">
@@ -45,7 +45,7 @@ export default function PassportPage() {
             </div>
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <h2 className="font-medievalSharp text-2xl font-bold text-amber-900">
+                <h2 className="font-medievalSharp text-2xl font-bold text-amber-950">
                   Adventurer Dev Badraj
                 </h2>
                 <Badge className="font-medievalSharp bg-amber-700 text-amber-50">
@@ -96,56 +96,89 @@ export default function PassportPage() {
 
           <TabsContent value="nfts" className="mt-0">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-lg border border-amber-200 bg-amber-300/50 transition-all hover:shadow-lg"
-                >
-                  <div className="relative">
-                    <Image
-                      src={`/placeholder.svg?height=300&width=300`}
-                      alt={`NFT ${i}`}
-                      width={300}
-                      height={300}
-                      className="h-64 w-full object-cover"
-                    />
-                    <div className="absolute top-2 right-2">
-                      <Badge className="font-medievalSharp bg-amber-700 text-amber-50">
-                        {i % 3 === 0
-                          ? 'Legendary'
-                          : i % 2 === 0
-                            ? 'Rare'
-                            : 'Common'}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-medievalSharp mb-1 text-lg font-bold text-amber-900">
-                      Enchanted Relic #{i}
-                    </h3>
-                    <div className="mb-3 flex items-center text-sm text-amber-700">
-                      <Calendar className="mr-1 h-4 w-4" /> Acquired: May{' '}
-                      {i + 10}, 2025
-                    </div>
-                    <p className="mb-3 text-sm text-amber-800">
-                      A mystical artifact discovered during your journey through
-                      the ancient forest.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-sm text-amber-700">
-                        <MapPin className="mr-1 h-4 w-4" /> Mystic Garden
+              {[1, 2, 3, 4].map((i) => {
+                const getNFTDetails = (index: number) => {
+                  switch (index) {
+                    case 1:
+                      return {
+                        name: "Dubai Desert Rose",
+                        location: "Burj Khalifa Gardens",
+                        description: "A magical artifact infused with the spirit of Dubai's modern oasis."
+                      };
+                    case 2:
+                      return {
+                        name: "Taj Mahal Moonstone",
+                        location: "Agra Heritage Site",
+                        description: "A mystical gem that captures the eternal love story of the Taj Mahal."
+                      };
+                    case 3:
+                      return {
+                        name: "CN Tower Starlight",
+                        location: "Toronto Harbourfront",
+                        description: "A powerful relic that channels the energy of Toronto's iconic skyline."
+                      };
+                    case 4:
+                      return {
+                        name: "Singapore Lion's Heart",
+                        location: "Gardens by the Bay",
+                        description: "An enchanted crystal embodying the spirit of the Lion City."
+                      };
+                    default:
+                      return {
+                        name: "Enchanted Relic",
+                        location: "Mystic Garden",
+                        description: "A mystical artifact discovered during your journey."
+                      };
+                  }
+                };
+
+                const details = getNFTDetails(i);
+
+                return (
+                  <div
+                    key={i}
+                    className="overflow-hidden rounded-lg border border-amber-200 bg-amber-100/30 transition-all hover:shadow-lg"
+                  >
+                    <div className="relative">
+                      <Image
+                        src={`/${i === 1 ? 'DUBAI' : i === 2 ? 'INDIA' : i === 3 ? 'TORONTO' : i === 4 ? 'SINGAPORE' : ''}.png?height=300&width=300`}
+                        alt={details.name}
+                        width={300}
+                        height={300}
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute top-2 right-2">
+                        <Badge className="font-medievalSharp bg-amber-600 text-amber-50">
+                          {i % 3 === 0 ? 'Legendary' : i % 2 === 0 ? 'Rare' : 'Common'}
+                        </Badge>
                       </div>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-amber-700 text-amber-700"
-                      >
-                        View Details
-                      </Button>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-medievalSharp mb-1 text-lg font-bold text-amber-100">
+                        {details.name}
+                      </h3>
+                      <div className="mb-3 flex items-center text-sm text-amber-400">
+                        <Calendar className="mr-1 h-4 w-4" /> Acquired: May {i + 10}, 2025
+                      </div>
+                      <p className="mb-3 text-sm text-red-950">
+                        {details.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-sm text-amber-400">
+                          <MapPin className="mr-1 h-4 w-4" /> {details.location}
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-amber-700 text-amber-600"
+                        >
+                          View Details
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </TabsContent>
         </Tabs>

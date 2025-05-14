@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 
 export default function QuestsPage() {
   return (
-    <div className="relative bg-amber-900/50">
+    <div className="relative bg-red-900/40">
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>

@@ -53,26 +53,28 @@ export function SimpleQuestMap() {
   ];
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-amber-100/30">
+    <div className="relative h-full w-full overflow-hidden rounded-lg border-2 border-amber-200 bg-amber-100/30">
       <div className="relative h-full w-full">
         <Image
           src="/world.jpg"
           alt="Fantasy Map"
           fill
           className="object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
         />
 
         {locations.map((location) => (
           <div
             key={location.id}
-            className="absolute cursor-pointer"
+            className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
             style={{ left: `${location.x}%`, top: `${location.y}%` }}
             onClick={() => setSelectedLocation(location.id)}
           >
             <div className="relative">
-              <div className="absolute -top-1 -left-1 h-8 w-8 animate-ping rounded-full bg-amber-500/30"></div>
-              <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-amber-200 bg-amber-700 shadow-md">
-                <MapPin className="h-4 w-4 text-amber-100" />
+              <div className="absolute -top-2 -left-2 h-8 w-8 animate-ping rounded-full bg-amber-500/30"></div>
+              <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-amber-200 bg-amber-700 shadow-md hover:bg-amber-600 transition-colors">
+                <MapPin className="h-5 w-5 text-amber-100" />
               </div>
             </div>
           </div>
@@ -80,7 +82,7 @@ export function SimpleQuestMap() {
       </div>
 
       {selectedLocation && (
-        <div className="absolute right-4 bottom-4 left-4 rounded-lg border-2 border-amber-200 bg-amber-50 p-4 shadow-lg">
+        <div className="absolute right-4 bottom-4 left-4 md:left-auto md:w-80 rounded-lg border-2 border-amber-200 bg-amber-50/95 backdrop-blur-sm p-4 shadow-lg">
           <Button
             variant="ghost"
             size="icon"

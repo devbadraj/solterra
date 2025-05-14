@@ -17,17 +17,17 @@ import { FloatingElements } from '@/components/floating-elements';
 
 export default function PartnersPage() {
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-red-900/40">
       <FloatingElements />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-amber-900 md:text-4xl">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-200 md:text-4xl">
               Merchant Dashboard
             </h1>
-            <p className="mt-2 text-amber-800">
+            <p className="mt-2 text-grey-300">
               Manage your quests, rewards, and track adventurer check-ins
             </p>
           </div>

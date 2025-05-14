@@ -17,7 +17,7 @@ export function SimplePassport() {
   ];
 
   return (
-    <div className="rounded-lg border-2 border-amber-300 bg-amber-800 p-6 shadow-lg">
+    <div className="rounded-lg border-2 border-amber-200 bg-amber-100/30 p-6 shadow-lg">
       <div className="mb-6 text-center">
         <h3 className="font-medievalSharp text-2xl font-bold text-gray-100">
           Your Passport
@@ -29,12 +29,12 @@ export function SimplePassport() {
         {stamps.map((stamp) => (
           <div
             key={stamp.id}
-            className="relative rounded-lg border-2 border-amber-200 bg-amber-300/50 p-4"
+            className="relative rounded-lg border-2 border-amber-900 bg-amber-600/30 p-4"
           >
             <div className="absolute -top-3 -right-3 rotate-12">
               <div className="relative">
                 <Image
-                  src={`/placeholder.svg?height=80&width=80`}
+                  src={`/stamp.png?height=80&width=80`}
                   alt={stamp.name}
                   width={80}
                   height={80}
