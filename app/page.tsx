@@ -10,7 +10,7 @@ import Footer from '@/sections/Footer';
 
 export default function LandingPage() {
   return (
-    <main className="relative bg-amber-900/50">
+    <main className="relative bg-amber-600/50">
       <span
         className="absolute inset-0 -z-10 opacity-30"
         style={{ backgroundImage: `url(/grain.webp)` }}

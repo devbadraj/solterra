@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +10,6 @@ import {
   Settings,
   CheckCircle,
   Clock,
-  Wallet,
   Trophy,
   Sparkles,
 } from 'lucide-react';
@@ -19,57 +17,8 @@ import { FloatingElements } from '@/components/floating-elements';
 
 export default function PartnersPage() {
   return (
-    <div className="min-h-screen bg-amber-50 bg-[url('/parchment-texture.png')] bg-repeat">
+    <div className="min-h-screen bg-amber-50">
       <FloatingElements />
-
-      {/* Header */}
-      <header className="border-b border-amber-200/50 bg-amber-50/80 backdrop-blur-sm">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/solterra-logo.png"
-              alt="Solterra"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
-            />
-            <span className="font-medievalSharp text-2xl font-bold text-amber-900">
-              Solterra
-            </span>
-          </Link>
-          <nav className="font-medievalSharp hidden items-center space-x-6 md:flex">
-            <Link
-              href="/quests"
-              className="text-amber-900 hover:text-amber-700"
-            >
-              Quests
-            </Link>
-            <Link
-              href="/passport"
-              className="text-amber-900 hover:text-amber-700"
-            >
-              Passport
-            </Link>
-            <Link
-              href="/partners"
-              className="border-b-2 border-amber-700 text-amber-900 hover:text-amber-700"
-            >
-              Partners
-            </Link>
-            <Link href="/about" className="text-amber-900 hover:text-amber-700">
-              About
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="font-medievalSharp border-amber-700 text-amber-700 hover:bg-amber-100"
-            >
-              <Wallet className="mr-2 h-4 w-4" /> 0x1a2...3b4c
-            </Button>
-          </div>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">

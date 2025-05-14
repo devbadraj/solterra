@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Funnel_Display, MedievalSharp } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 const funnelDisplay = Funnel_Display({
   variable: '--font-funnel-display',
@@ -27,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${funnelDisplay.className} ${medievalSharp.variable}`}>
+      <body
+        className={`${funnelDisplay.className} ${medievalSharp.variable}`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

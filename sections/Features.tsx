@@ -9,7 +9,7 @@ export default function Features() {
           Your Adventure Awaits
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="rounded-lg border p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <Map className="text-primary-foreground size-6" />
             </div>
@@ -21,7 +21,7 @@ export default function Features() {
               quests to earn rewards.
             </p>
           </div>
-          <div className="rounded-lg border p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <Scroll className="text-primary-foreground size-6" />
             </div>
@@ -33,11 +33,11 @@ export default function Features() {
               your adventures.
             </p>
           </div>
-          <div className="rounded-lg border p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <IconWallet className="text-primary-foreground size-6" />
             </div>
-            <h3 className="font-medievalSharp mb-2 text-xl font-bold text-amber-500">
+            <h3 className="font-medievalSharp mb-2 text-xl font-bold">
               Mystical Rewards
             </h3>
             <p className="text-amber-500">

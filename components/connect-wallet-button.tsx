@@ -16,13 +16,13 @@ export function ConnectWalletButton() {
       {isConnected ? (
         <Button
           variant="outline"
-          className="font-medievalSharp border-amber-700 text-amber-700 hover:bg-amber-100"
+          className="font-medievalSharp"
         >
           <Wallet className="mr-2 h-4 w-4" /> 0x1a2...3b4c
         </Button>
       ) : (
         <Button
-          className="font-medievalSharp bg-amber-700 text-amber-50 hover:bg-amber-800"
+          className="font-medievalSharp"
           onClick={handleConnect}
         >
           <Wallet className="mr-2 h-4 w-4" /> Connect Wallet

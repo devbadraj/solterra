@@ -88,8 +88,6 @@ export function PassportBook() {
             style={{ width: `${100 / totalPages}%` }}
           >
             <div className="relative overflow-hidden rounded-lg border-2 border-amber-300 bg-amber-50 p-6 shadow-lg md:p-8">
-              <div className="pointer-events-none absolute top-0 left-0 h-full w-full bg-[url('/parchment-texture.png')] bg-repeat opacity-30"></div>
-
               <div className="relative">
                 <div className="mb-6 text-center">
                   <h3 className="font-medievalSharp text-2xl font-bold text-amber-900">
