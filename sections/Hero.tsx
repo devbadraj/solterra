@@ -26,14 +26,14 @@ export default function Hero() {
                 <span>Start Quest</span>&nbsp;
                 <IconCaretRightFilled className="ml-2 size-5" />
               </Button>
-              <Button variant="outline">
+              <Button variant="outline" onClick={() => router.push('/home/passport')}>
                 <span>View Passport</span>&nbsp;
                 <IconEPassport className="ml-2 size-5" />
               </Button>
             </div>
           </div>
           <div className="relative">
-            <div className="animate-pulse-glow absolute -inset-4 rounded-full bg-amber-500/10 blur-3xl"></div>
+            <div className="animate-pulse-glow absolute -inset-4 rounded-full bg-red-100/5 blur-3xl"></div>
             <Image
               src="/floating-island.png"
               alt="Floating Island"

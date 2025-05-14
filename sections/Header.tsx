@@ -16,7 +16,7 @@ export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
-    <section className="border-b border-white/30 bg-amber-800/50">
+    <section className="border-b border-white/30 bg-black/50">
       <div className="container flex items-center justify-between p-2">
         <Link href="/" className="flex items-center gap-2 text-2xl font-black">
           <Image
@@ -29,7 +29,7 @@ export default function Header() {
             unoptimized
             className="size-10"
           />
-          <p className="text-primary font-medievalSharp font-semibold tracking-wide">
+          <p className="text-white font-medievalSharp font-semibold tracking-wide ">
             Solterra
           </p>
         </Link>
@@ -81,7 +81,7 @@ export default function Header() {
           )}
         </div>
         <nav className="hidden items-center gap-5 font-medium lg:flex">
-          <NavBar className='text-amber-200'/>
+          <NavBar className='text-red-100'/>
         </nav>
         <ConnectWalletButton />
       </div>

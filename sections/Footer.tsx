@@ -20,16 +20,16 @@ export default function Footer() {
                 unoptimized
                 className="size-10"
               />
-              <span className="font-medievalSharp text-xl font-bold text-amber-200">
+              <span className="font-medievalSharp text-xl font-bold text-red-100">
                 Solterra
               </span>
             </Link>
           </div>
           <nav className="flex items-center gap-6">
-          <NavBar className='text-amber-200 opacity-80'/>
+          <NavBar className='text-red-100 opacity-80'/>
           </nav>
         </div>
-        <div className="mt-6 text-center text-sm text-amber-400">
+        <div className="mt-6 text-center text-sm text-white">
           <p>© {new Date().getFullYear()} Solterra. All rights reserved.</p>
         </div>
       </div>

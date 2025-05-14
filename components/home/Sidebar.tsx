@@ -36,7 +36,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             unoptimized
             className="size-8"
           />
-          <p className="text-primary font-medievalSharps text-2xl font-semibold">
+          <p className="text-primary font-medievalSharp text-2xl font-semibold" onClick={() => window.location.href = '/'}>
             Solterra
           </p>
         </div>

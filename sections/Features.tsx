@@ -9,38 +9,38 @@ export default function Features() {
           Your Adventure Awaits
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-red-100/20 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <Map className="text-primary-foreground size-6" />
             </div>
             <h3 className="font-medievalSharp mb-2 text-xl font-bold">
               Magical Quests
             </h3>
-            <p className="text-amber-500">
+            <p className="text-orange-300">
               Discover enchanted locations in the real world and embark on
               quests to earn rewards.
             </p>
           </div>
-          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-red-100/20 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <Scroll className="text-primary-foreground size-6" />
             </div>
             <h3 className="font-medievalSharp mb-2 text-xl font-bold">
               Digital Passport
             </h3>
-            <p className="text-amber-500">
+            <p className="text-orange-300">
               Collect magical stamps and badges in your passport as proof of
               your adventures.
             </p>
           </div>
-          <div className="rounded-lg border bg-amber-900 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-lg border bg-red-100/20 p-6 shadow-md backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
             <div className="bg-primary mb-4 flex size-12 items-center justify-center">
               <IconWallet className="text-primary-foreground size-6" />
             </div>
             <h3 className="font-medievalSharp mb-2 text-xl font-bold">
               Mystical Rewards
             </h3>
-            <p className="text-amber-500">
+            <p className="text-orange-300">
               Earn NFTs and SPL tokens with real utility as you complete your
               journey.
             </p>
