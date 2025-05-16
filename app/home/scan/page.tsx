@@ -91,9 +91,9 @@ export default function ScanPage() {
           <motion.div 
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="rounded-lg border-2 border-amber-200 bg-amber-100/10 backdrop-blur-sm p-6 shadow-mystical"
+            className="rounded-lg border-2 border-amber-200 bg-amber-100/10 backdrop-blur-sm p-6 shadow-mystical "
           >
-            <h2 className="font-medievalSharp mb-4 text-xl text-amber-100">
+            <h2 className="font-medievalSharp mb-4 text-xl text-amber-100 ">
               Enchanted Scanner
             </h2>
             <QRScanner onScan={handleScan} />

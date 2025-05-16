@@ -73,7 +73,7 @@ export default function QuestsPage() {
                 rarity="Common"
                 elevation="320 m"
                 imageSrc="/garden.jpeg?height=500&width=300"
-                onClick={() => {}}
+                onClick={() => handleLocationClick(1)}
               />
               <LocationCard
                 id={2}
@@ -83,7 +83,7 @@ export default function QuestsPage() {
                 rarity="Rare"
                 elevation="850 m"
                 imageSrc="/temple.jpeg?height=500&width=300"
-                onClick={() => {}}
+                onClick={() => handleLocationClick(2)}
               />
               <LocationCard
                 id={3}
@@ -93,7 +93,7 @@ export default function QuestsPage() {
                 rarity="Legendary"
                 elevation="1,250 m"
                 imageSrc="/dragon.jpeg?height=500&width=300"
-                onClick={() => {}}
+                onClick={() => handleLocationClick(3)}
               />
             </div>
           </TabsContent>
