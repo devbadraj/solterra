@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
           <div className="space-y-6 text-center md:text-left">
-            <h1 className="font-medievalSharp text-4xl leading-tight font-bold text-gray-100 md:text-6xl">
+            <h1 className="font-medievalSharp text-4xl leading-tight font-bold text-gray-100 md:text-6xl drop-shadow-glow">
               Begin your Solterra Journey
             </h1>
             <p className="text-lg text-gray-300 md:text-xl">

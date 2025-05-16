@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,9 +16,63 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { FloatingElements } from '@/components/floating-elements';
+import { CreateQuestForm } from '@/components/create-quest-form';
+import { useState } from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { GrainOverlay } from '@/components/grain-overlay';
+
+const analyticsData = [
+  { month: 'Jan', checkIns: 65 },
+  { month: 'Feb', checkIns: 85 },
+  { month: 'Mar', checkIns: 120 },
+  { month: 'Apr', checkIns: 90 },
+  { month: 'May', checkIns: 140 },
+  { month: 'Jun', checkIns: 180 },
+];
+
+const nftRewards = [
+  {
+    id: 1,
+    name: 'Taj Mahal Moonstone',
+    image: '/india.png',
+    claimed: 28,
+    location: 'India',
+  },
+  {
+    id: 2,
+    name: 'Marina Bay Crystal',
+    image: '/singapore.png',
+    claimed: 15,
+    location: 'Singapore',
+  },
+  {
+    id: 3,
+    name: 'Dubai Desert Rose',
+    image: '/dubai.png',
+    claimed: 21,
+    location: 'Dubai',
+  },
+];
 
 export default function PartnersPage() {
+  const [quests, setQuests] = useState([
+    {
+      name: 'Mystic Garden Quest 1',
+      location: 'Enchanted Forest',
+      reward: '50 SOL + NFT',
+      checkIns: 12,
+      status: 'Active',
+    },
+    // ...add more initial quests if needed
+  ]);
+
+  const handleQuestCreated = (newQuest: any) => {
+    setQuests([newQuest, ...quests]);
+  };
+
   return (
+    <>
+    <GrainOverlay/>
     <div className="min-h-screen bg-red-900/40">
       <FloatingElements />
 
@@ -24,7 +80,7 @@ export default function PartnersPage() {
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-gray-200 md:text-4xl">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-200 md:text-4xl drop-shadow-glow">
               Merchant Dashboard
             </h1>
             <p className="mt-2 text-grey-300">
@@ -127,9 +183,7 @@ export default function PartnersPage() {
                 <h2 className="font-medievalSharp text-2xl font-bold text-amber-900">
                   Active Quests
                 </h2>
-                <Button className="font-medievalSharp bg-amber-700 text-amber-50 hover:bg-amber-800">
-                  <PlusCircle className="mr-2 h-4 w-4" /> New Quest
-                </Button>
+                <CreateQuestForm onQuestCreated={handleQuestCreated} />
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -156,21 +210,17 @@ export default function PartnersPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {[1, 2, 3, 4].map((i) => (
+                    {quests.map((quest, i) => (
                       <tr
                         key={i}
                         className="border-b border-amber-200 hover:bg-amber-100/30"
                       >
+                        <td className="px-4 py-3 text-amber-900">{quest.name}</td>
                         <td className="px-4 py-3 text-amber-900">
-                          Mystic Garden Quest {i}
+                          {quest.location}
                         </td>
-                        <td className="px-4 py-3 text-amber-900">
-                          Enchanted Forest
-                        </td>
-                        <td className="px-4 py-3 text-amber-900">
-                          50 SOL + NFT
-                        </td>
-                        <td className="px-4 py-3 text-amber-900">{i * 12}</td>
+                        <td className="px-4 py-3 text-amber-900">{quest.reward}</td>
+                        <td className="px-4 py-3 text-amber-900">{quest.checkIns}</td>
                         <td className="px-4 py-3">
                           <span
                             className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -226,24 +276,24 @@ export default function PartnersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {[1, 2, 3].map((i) => (
+                    {nftRewards.map((nft) => (
                       <div
-                        key={i}
+                        key={nft.id}
                         className="flex items-center gap-4 rounded-lg border border-amber-200 p-3 hover:bg-amber-100/30"
                       >
                         <Image
-                          src={`/nft-${i}.png`}
-                          alt={`NFT ${i}`}
+                          src={nft.image}
+                          alt={nft.name}
                           width={60}
                           height={60}
                           className="h-12 w-12 rounded-md object-cover"
                         />
                         <div className="flex-1">
                           <h4 className="font-medievalSharp text-amber-900">
-                            Enchanted Relic #{i}
+                            {nft.name}
                           </h4>
                           <p className="text-sm text-amber-700">
-                            Claimed: {i * 10} times
+                            Claimed: {nft.claimed} times • {nft.location}
                           </p>
                         </div>
                         <Button
@@ -313,10 +363,47 @@ export default function PartnersPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex h-80 items-center justify-center rounded-lg border border-amber-200 bg-amber-100/50">
-                    <p className="font-medievalSharp text-amber-700">
-                      Analytics Chart Placeholder
-                    </p>
+                  <div className="h-80 w-full">
+                    <AreaChart
+                      width={800}
+                      height={300}
+                      data={analyticsData}
+                      margin={{
+                        top: 10,
+                        right: 30,
+                        left: 0,
+                        bottom: 0,
+                      }}
+                    >
+                      <defs>
+                        <linearGradient id="colorCheckIns" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#b45309" stopOpacity={0.8} />
+                          <stop offset="95%" stopColor="#b45309" stopOpacity={0} />
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid strokeDasharray="3 3" className="stroke-amber-200/50" />
+                      <XAxis
+                        dataKey="month"
+                        className="text-amber-900 font-medievalSharp"
+                      />
+                      <YAxis
+                        className="text-amber-900 font-medievalSharp"
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: 'rgba(254, 243, 199, 0.9)',
+                          border: '1px solid rgb(217, 119, 6)',
+                          borderRadius: '0.5rem',
+                        }}
+                      />
+                      <Area
+                        type="monotone"
+                        dataKey="checkIns"
+                        stroke="#b45309"
+                        fillOpacity={1}
+                        fill="url(#colorCheckIns)"
+                      />
+                    </AreaChart>
                   </div>
                 </CardContent>
               </Card>
@@ -329,21 +416,27 @@ export default function PartnersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
+                    {[
+                      { name: 'Taj Mahal Gardens', checkIns: 95 },
+                      { name: 'Marina Bay Sands', checkIns: 82 },
+                      { name: 'Burj Khalifa', checkIns: 78 },
+                      { name: 'Gardens by the Bay', checkIns: 65 },
+                      { name: 'Dubai Mall', checkIns: 59 },
+                    ].map((location, i) => (
                       <div
                         key={i}
                         className="flex items-center justify-between border-b border-amber-200 p-2"
                       >
                         <div className="flex items-center gap-2">
                           <div className="font-medievalSharp flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-amber-900">
-                            {i}
+                            {i + 1}
                           </div>
                           <span className="text-amber-900">
-                            Mystic Garden {i}
+                            {location.name}
                           </span>
                         </div>
                         <span className="text-amber-700">
-                          {100 - i * 15} check-ins
+                          {location.checkIns} check-ins
                         </span>
                       </div>
                     ))}
@@ -355,5 +448,6 @@ export default function PartnersPage() {
         </Tabs>
       </main>
     </div>
+    </>
   );
 }

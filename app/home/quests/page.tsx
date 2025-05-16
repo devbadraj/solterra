@@ -5,14 +5,24 @@ import { Scroll, Map, Search } from 'lucide-react';
 import { SimpleQuestMap } from '@/components/simple-quest-map';
 import { LocationCard } from '@/components/location-card';
 import { Input } from '@/components/ui/input';
+import { GrainOverlay } from '@/components/grain-overlay';
+import { useRouter } from 'next/navigation';
 
 export default function QuestsPage() {
+    const router = useRouter();
+  
+    const handleLocationClick = (id: number) => {
+      router.push(`/home/quests?location=${id}`);
+    };
   return (
+    <>
+    <GrainOverlay/>
+    
     <div className="relative bg-red-900/40">
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100 drop-shadow-glow">
               Quest Map
             </h1>
             <p className="mt-2 text-gray-300">
@@ -59,7 +69,7 @@ export default function QuestsPage() {
                 id={1}
                 name="Mystic Garden"
                 location="Rare Evo, Las Vegas"
-                reward="50 SOL + NFT"
+                reward="Common NFT"
                 rarity="Common"
                 elevation="320 m"
                 imageSrc="/garden.jpeg?height=500&width=300"
@@ -69,7 +79,7 @@ export default function QuestsPage() {
                 id={2}
                 name="Ancient Temple"
                 location="Consensus 2025, Toronto"
-                reward="100 SOL + Rare NFT"
+                reward="Rare NFT"
                 rarity="Rare"
                 elevation="850 m"
                 imageSrc="/temple.jpeg?height=500&width=300"
@@ -79,7 +89,7 @@ export default function QuestsPage() {
                 id={3}
                 name="Dragon's Peak"
                 location="Token 2049, Dubai"
-                reward="200 SOL + Legendary NFT"
+                reward="Legendary NFT"
                 rarity="Legendary"
                 elevation="1,250 m"
                 imageSrc="/dragon.jpeg?height=500&width=300"
@@ -90,5 +100,6 @@ export default function QuestsPage() {
         </Tabs>
       </main>
     </div>
+    </>
   );
 }

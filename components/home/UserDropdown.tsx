@@ -22,7 +22,7 @@ export default function UserDropdown() {
         <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
           <Avatar className="size-8">
             <AvatarImage
-              src="https://res.cloudinary.com/dlzlfasou/image/upload/v1741345506/user_sam4wh.png"
+              src="/baddy-icon.png"
               width={32}
               height={32}
               alt="Profile image"
@@ -34,10 +34,10 @@ export default function UserDropdown() {
       <DropdownMenuContent className="max-w-64" align="end">
         <DropdownMenuLabel className="flex min-w-0 flex-col">
           <span className="text-foreground truncate text-sm font-medium">
-            Keith Kennedy
+            Dev Badraj
           </span>
           <span className="text-muted-foreground truncate text-xs font-normal">
-            k.kennedy@originui.com
+            dbadraj@gmail.com
           </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

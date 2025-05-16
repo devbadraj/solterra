@@ -1,7 +1,14 @@
 import { LocationCard } from '@/components/location-card';
 import { ParallaxSection } from '@/components/parallax-section';
+import { useRouter } from 'next/navigation';
 
 export default function Location() {
+  const router = useRouter();
+
+  const handleLocationClick = (id: number) => {
+    router.push(`/home/quests?location=${id}`);
+  };
+
   return (
     <section id="quests">
       <ParallaxSection className="container py-16">
@@ -23,7 +30,7 @@ export default function Location() {
               rarity="Common"
               elevation="320 m"
               imageSrc="/garden.jpeg?height=500&width=300"
-              onClick={() => {}}
+              onClick={() => handleLocationClick(1)}
             />
             <LocationCard
               id={2}
@@ -33,7 +40,7 @@ export default function Location() {
               rarity="Rare"
               elevation="850 m"
               imageSrc="/temple.jpeg?height=500&width=300"
-              onClick={() => {}}
+              onClick={() => handleLocationClick(2)}
             />
             <LocationCard
               id={3}
@@ -43,7 +50,7 @@ export default function Location() {
               rarity="Legendary"
               elevation="1,250 m"
               imageSrc="/dragon.jpeg?height=500&width=300"
-              onClick={() => {}}
+              onClick={() => handleLocationClick(3)}
             />
           </div>
         </div>

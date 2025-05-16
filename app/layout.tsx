@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Funnel_Display, MedievalSharp } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/providers/ThemeProvider';
+import SolanaWalletProvider from '@/providers/SolanaWalletProvider';
 
 const funnelDisplay = Funnel_Display({
   variable: '--font-funnel-display',
@@ -37,7 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SolanaWalletProvider>
+            {children}
+          </SolanaWalletProvider>
         </ThemeProvider>
       </body>
     </html>

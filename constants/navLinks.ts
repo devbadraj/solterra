@@ -7,6 +7,7 @@ import {
   IconLibraryPlus,
   IconSettings,
 } from '@tabler/icons-react';
+import { title } from 'process';
 
 export const navigationLink = {
   navMain: [
@@ -29,6 +30,11 @@ export const navigationLink = {
           url: '/home/quests',
           icon: IconClipboardList,
         },
+        {
+          title: 'Scan Nft',
+          url: '/home/scan',
+          icon: IconLibraryPlus,
+        }
       ],
     },
     {

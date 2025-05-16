@@ -15,7 +15,7 @@ export function SimpleQuestMap() {
       x: 25,
       y: 30,
       name: 'Mystic Garden',
-      reward: '50 SOL + NFT',
+      reward: 'Common NFT',
       rarity: 'Common',
     },
     {
@@ -23,7 +23,7 @@ export function SimpleQuestMap() {
       x: 45,
       y: 20,
       name: 'Ancient Temple',
-      reward: '100 SOL + Rare NFT',
+      reward: 'Rare NFT',
       rarity: 'Rare',
     },
     {
@@ -31,7 +31,7 @@ export function SimpleQuestMap() {
       x: 65,
       y: 40,
       name: 'Crystal Cave',
-      reward: '75 SOL + NFT',
+      reward: 'Common NFT',
       rarity: 'Common',
     },
     {
@@ -39,7 +39,7 @@ export function SimpleQuestMap() {
       x: 35,
       y: 60,
       name: 'Enchanted Forest',
-      reward: '200 SOL + Legendary NFT',
+      reward: 'Legendary NFT',
       rarity: 'Legendary',
     },
     {

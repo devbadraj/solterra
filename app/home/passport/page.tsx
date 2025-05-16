@@ -4,9 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Share2, Calendar, MapPin } from 'lucide-react';
 import { SimplePassport } from '@/components/simple-passport';
+import { GrainOverlay } from '@/components/grain-overlay';
 
 export default function PassportPage() {
   return (
+    <>
+    <GrainOverlay/>
     <div className="relative bg-red-900/40">
       <span
         className="absolute inset-0 -z-10 opacity-30 "
@@ -15,7 +18,7 @@ export default function PassportPage() {
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100">
+            <h1 className="font-medievalSharp text-3xl font-bold text-gray-100 drop-shadow-glow">
               Digital Passport
             </h1>
             <p className="mt-2 text-gray-300">
@@ -45,7 +48,7 @@ export default function PassportPage() {
             </div>
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <h2 className="font-medievalSharp text-2xl font-bold text-amber-950">
+                <h2 className="font-medievalSharp text-2xl font-bold text-red-100 ">
                   Adventurer Dev Badraj
                 </h2>
                 <Badge className="font-medievalSharp bg-amber-700 text-amber-50">
@@ -184,5 +187,6 @@ export default function PassportPage() {
         </Tabs>
       </main>
     </div>
+    </>
   );
 }
