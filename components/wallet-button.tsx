@@ -1,14 +1,9 @@
 'use client';
 
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { useWallet } from '@solana/wallet-adapter-react';
-
-// Import wallet styles
-require('@solana/wallet-adapter-react-ui/styles.css');
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 export function WalletButton() {
-  const { connected } = useWallet();
-
   return (
     <WalletMultiButton className={`
       font-medievalSharp 

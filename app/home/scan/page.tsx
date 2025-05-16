@@ -20,7 +20,6 @@ const mockLocations = {
 };
 
 export default function ScanPage() {
-  const [lastScanned, setLastScanned] = useState<string | null>(null);
   const [nftData, setNftData] = useState<NFTData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -28,7 +27,6 @@ export default function ScanPage() {
   const handleScan = async (result: string) => {
     try {
       setIsProcessing(true);
-      setLastScanned(result);
 
       // Fetch the HTML content from the scanned URL
       const response = await fetch(result);

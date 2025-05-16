@@ -20,6 +20,7 @@ import { CreateQuestForm } from '@/components/create-quest-form';
 import { useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { GrainOverlay } from '@/components/grain-overlay';
+import { WalletContextState } from '@solana/wallet-adapter-react';
 
 const analyticsData = [
   { month: 'Jan', checkIns: 65 },
@@ -68,6 +69,14 @@ export default function PartnersPage() {
 
   const handleQuestCreated = (newQuest: any) => {
     setQuests([newQuest, ...quests]);
+  };
+
+  const handleTransaction = async (wallet: WalletContextState) => {
+    if (!wallet.connected || !wallet.publicKey) {
+      throw new Error('Wallet not connected');
+    }
+    
+    // ...rest of the function implementation...
   };
 
   return (
