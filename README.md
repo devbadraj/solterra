@@ -40,7 +40,7 @@ Solterra is a Next.js-based web3 adventure game where users explore real-world l
 
 3. **Open your browser:**
 
-   Visit [solterra.quest](solterra.quest) to view the app.
+   Visit [solterra.quest](https://solterra.quest/) to view the app.
 
 ---
 
